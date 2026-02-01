@@ -19,3 +19,12 @@ class FSTDBHandler():
         
         self.session.add(user_file)
         self.session.commit()
+
+    def getAllRecords(self, table):
+        # just fetch the file's directory and name for now.
+        all_records_query = self.session.query(table.directory + '/' + table.filename)
+        
+        print("Total Records:", all_records_query.count())
+
+        return all_records_query
+    
