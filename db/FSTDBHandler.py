@@ -1,4 +1,4 @@
-from FSTModels import File, engine
+from db.FSTModels import File, engine
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy import select
