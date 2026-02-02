@@ -23,6 +23,15 @@ class Thumb(QWidget):
         self.setThumbnailImage()
         self.setLayout(self.thumb_layout)
 
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.isSelected = True
+            print("Item Pressed", self.isSelected)
+            scaled = self.thumbnail.pixmap().scaled(300, 300, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            self.thumbnail.setPixmap(scaled)
+        else:
+            print("LMB not pressed")
+
     def getThumbnailImage(self):
         return self.thumbnail
     
