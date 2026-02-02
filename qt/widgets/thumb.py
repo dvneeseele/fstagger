@@ -8,6 +8,7 @@ class Thumb(QWidget):
 
         self.isSelected = False
         self.color = ''
+        self.title = ''
         self.thumbnail = QLabel()
         self.thumbnail_path = thumbnail_path
         # test image for loading
@@ -21,6 +22,18 @@ class Thumb(QWidget):
         # For now just working on the widget to load the thumbnail for images.
         self.setThumbnailImage()
         self.setLayout(self.thumb_layout)
+
+    def getThumbnailImage(self):
+        return self.thumbnail
+    
+    def getTitle(self):
+        return self.title
+    
+    def getSelected(self):
+        return self.isSelected
+    
+    def updateImage(self, img):
+        self.thumbnail.setPixmap(img)
 
     def setDefaultThumb(self):
         # No thumbnail cache yet.
